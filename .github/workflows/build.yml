@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Tokyo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: actions/checkout@v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        with:
+          ref: main
+          repository: ${{ secrets.REPO_NAME }}
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: peaceiris/actions-hugo@v2.5.0
+        uses: peaceiris/actions-hugo@c03b5dbed22245418539b65eb9a3b1d5fdd9a0a6
+        with:
+          extended: true
+          hugo-version: latest
+
+      - name: actions/setup-node@v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        with:
+          node-version: "14"
+
+      - name: Build
+        run: bash ${{ secrets.REPO_BUILD }}
+
+      - name: peaceiris/actions-gh-pages@v3.8.0
+        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
+        with:
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
