@@ -15,6 +15,7 @@ jobs:
       - name: actions/checkout@v2.3.4
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
         with:
+          fetch-depth: 0
           ref: main
           repository: ${{ secrets.REPO_NAME }}
           token: ${{ secrets.REPO_TOKEN }}
@@ -28,7 +29,7 @@ jobs:
       - name: actions/setup-node@v2.1.5
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
         with:
-          node-version: "14"
+          node-version: 14
 
       - name: Build
         run: bash ${{ secrets.REPO_BUILD }}
