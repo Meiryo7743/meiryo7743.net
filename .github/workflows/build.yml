@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.REPO_TOKEN }}
 
       - name: peaceiris/actions-hugo@v2.5.0
-        uses: peaceiris/actions-hugo@c03b5dbed22245418539b65eb9a3b1d5fdd9a0a6
+        uses: peaceiris/actions-hugo@86a3c300c730f9c35886afeca0af0c2ce031b0b4
         with:
           extended: true
           hugo-version: latest
