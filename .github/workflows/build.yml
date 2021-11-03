@@ -35,6 +35,6 @@ jobs:
         run: bash ${{ secrets.REPO_BUILD }}
 
       - name: peaceiris/actions-gh-pages@v3.8.0
-        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
+        uses: peaceiris/actions-gh-pages@d3d121d59436b77f95d88db13058d9752f43bc92
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
