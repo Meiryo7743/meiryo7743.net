@@ -1,1 +1,0 @@
-const loadGoogleFonts=()=>{const a=document.getElementById("google-fonts");a.href=a.dataset.href};window.addEventListener("load",()=>{loadGoogleFonts()})
