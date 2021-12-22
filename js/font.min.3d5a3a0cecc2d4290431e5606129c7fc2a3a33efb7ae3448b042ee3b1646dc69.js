@@ -1,1 +1,0 @@
-const loadWebFont=b=>{const a=document.getElementById(b);a.href=a.dataset.href};window.addEventListener("load",()=>{loadWebFont("google-fonts"),loadWebFont("katex-fonts")})
