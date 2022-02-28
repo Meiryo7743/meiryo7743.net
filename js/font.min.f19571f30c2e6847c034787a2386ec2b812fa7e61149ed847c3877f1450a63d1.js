@@ -1,0 +1,1 @@
+(()=>{var e=()=>{const e=document.head.querySelectorAll("link[data-loading='lazy']");for(const t of e)t.href=t.getAttribute("data-href")};window.addEventListener("load",()=>{e()})})()
