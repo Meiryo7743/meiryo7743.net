@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://meiryo7743.net/sitemap.xml
-
-User-agent: Megalodon
-Disallow: /
