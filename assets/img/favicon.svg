@@ -1,0 +1,15 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 16 16"
+>
+  <circle
+    cx="8"
+    cy="8"
+    r="8"
+    fill="#222"
+  />
+  <path
+    fill="#ddd"
+    d="M4 4v2l2.5 2.5L4 11l1 1h5l-1-1H6l2.5-2.5L12 12v-2L9.5 7.5 12 5l-1-1H6l1 1h3L7.5 7.5 4 4Z"
+  />
+</svg>
