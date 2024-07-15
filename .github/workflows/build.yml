@@ -14,25 +14,17 @@ jobs:
       - name: actions/checkout
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
-          fetch-depth: 0
           ref: main
           repository: ${{ secrets.REPO_NAME }}
-          token: ${{ secrets.REPO_TOKEN }}
-
-      - name: peaceiris/actions-hugo
-        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f # v3.0.0
-        with:
-          extended: true
-          hugo-version: latest
+          ssh-key: ${{ secrets.REPO_TOKEN }}
 
       - name: actions/setup-node
         uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
-          node-version-file: .node-version
           cache: npm
 
       - name: Build
-        run: bash ${{ secrets.REPO_BUILD }}
+        run: ${{ secrets.REPO_BUILD }}
 
       - name: peaceiris/actions-gh-pages
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
