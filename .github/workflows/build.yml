@@ -1,14 +1,15 @@
-name: Build
+name: Publish
 on:
-  schedule:
-    - cron: "0 * * * *"
+  repository_dispatch:
+    types:
+      - publish
   workflow_dispatch:
 
 env:
   TZ: Asia/Tokyo
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: actions/checkout
