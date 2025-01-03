@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
           ref: main
           repository: ${{ secrets.REPO_NAME }}
-          ssh-key: ${{ secrets.REPO_TOKEN }}
+          token: ${{ secrets.REPO_TOKEN }}
 
       - name: pnpm/action-setup
         uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
